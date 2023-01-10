@@ -1,5 +1,3 @@
-import os
-import pickle
 
 from pages.base import WebPage
 from pages.elements import WebElement, ManyWebElements

@@ -2,9 +2,6 @@
 # -*- encoding=utf8 -*-
 
 import time
-
-
-from selenium import webdriver
 from termcolor import colored
 
 from selenium.webdriver import ActionChains

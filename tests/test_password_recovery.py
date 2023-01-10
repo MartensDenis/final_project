@@ -1,7 +1,6 @@
 
 import pytest
 
-from selenium.webdriver.common.by import By
 from settings import captcha, verification_code, PHONE
 from selenium.webdriver import Keys
 from pages.auth_page import AuthPage

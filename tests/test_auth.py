@@ -3,7 +3,6 @@ import pytest
 
 from settings import PASSWORD, PHONE
 from selenium.webdriver import Keys
-from selenium.webdriver.common.by import By
 from pages.auth_page import AuthPage
 
 

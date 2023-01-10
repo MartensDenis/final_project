@@ -1,8 +1,6 @@
-import os
-import pickle
 
 from pages.base import WebPage
-from pages.elements import WebElement, ManyWebElements
+from pages.elements import WebElement
 
 
 class AuthPage(WebPage):
