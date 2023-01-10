@@ -1,40 +1,25 @@
 Введение
 ------------
 
-Итоговая работа: тестирование сайта Ростелеком. Включает в себя [тестовую документацию](https://docs.google.com/spreadsheets/d/1ozhYKREWZtFxSL6fGxtmr54SYOnzvWw7kLGjS6JgYv8/edit?usp=sharing)
+Итоговая работа тестирование сайта Ростелеком.     
+Включает в себя:     
+1). [тестовую документацию: чек-листы, тест-кейсы, диаграммы состояний и переходов в соответствии с пользовательскими сценариями](https://docs.google.com/spreadsheets/d/1ozhYKREWZtFxSL6fGxtmr54SYOnzvWw7kLGjS6JgYv8/edit?usp=sharing)  
+2). 36 автотестов
 
 
-Files
+Автотесты
 -----
+1). Автотесты написаны на языке python, использованы библиотеки Pytest, Selenium, beautifulsoup4 и 2captcha-python и др.           
+2). При проектировании автотестов использован паттерн PageObject, за основу взята библиотека Smart Page Object.                    
+3). Использован Webdriver Manager for Python, тесты стабильно работают для driver.Chrome(), Firefox не видит некоторые используемые локаторы             
+4). Автотесты перехватывают почту и смс для прохождения аутентификаций. Для получения смс телефона использовано дополнительное програмное обеспечение на андройд         
+5). Для автоматического прохождения каптчи использован автосервис rucaptcha.com и её библиотеки               
+6). Автотесты подменяют текст в браузере страницы для визуального понимания того что происходит на этапах тестирования                
+7). Общее время прохождения тестов 10 минут               
 
-[conftest.py](conftest.py) contains all the required code to catch failed test cases and make screenshot
-of the page in case any test case will fail.
-
-[pages/base.py](pages/base.py) contains PageObject pattern implementation for Python.
-
-[pages/elements.py](pages/elements.py) contains helper class to define web elements on web pages.
-
-[tests/test_smoke_yandex_market.py](tests/test_smoke_yandex_market.py) contains several smoke Web UI tests for YandexMarket (https://market.yandex.ru/)
-
-
-How To Run Tests
+Примечания
 ----------------
+Все тесты запускаются из командной строки командой pytest             
+При падении некоторых тестов необходимо запустить их повторно pytest --last-failed             
 
-1) Install all requirements:
 
-    ```bash
-    pip3 install -r requirements
-    ```
-
-2) Download Selenium WebDriver from https://chromedriver.chromium.org/downloads (choose version which is compatible with your browser)
-
-3) Run tests:
-
-    ```bash
-    python3 -m pytest -v --driver Chrome --driver-path ~/chrome tests/*
-    ```
-
-   ![alt text](example.png)
-
-Note:
-~/chrome in this example is the file of Selenium WebDriver downloaded and unarchived on step #2.
