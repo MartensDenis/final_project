@@ -60,5 +60,6 @@ class AuthPage(WebPage):
     password_confirm = WebElement(id="password-confirm")
 
     # radio_button
-    radio_btn_phone = WebElement(css_selector=".rt-radio__circle")
-    radio_btn_email = WebElement(css_selector=".rt-radio__dot")
+    radio_btn_phone = WebElement(xpath='//input[@value="sms"]//ancestor::label//span[@class="rt-radio__circle"]')
+
+    radio_btn_email = WebElement(xpath='//input[@value="email"]//ancestor::label//span[@class="rt-radio__circle"]')

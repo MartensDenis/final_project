@@ -1,7 +1,7 @@
 
 import pytest
 
-from settings import captcha, verification_code, PHONE
+from settings import captcha, verification_code, PHONE, EMAIL
 from selenium.webdriver import Keys
 from pages.auth_page import AuthPage
 
@@ -20,8 +20,8 @@ def load_forms_to_recovery_pass(web_browser_class, url="https://lk.rt.ru/"):
         image_captcha = page.captcha.get_attribute('src')
         result_captcha = captcha(image_captcha)
 
-        page.tab_phone.click()
-        page.user_name.send_keys(PHONE)
+        page.tab_email.click()
+        page.user_name.send_keys(EMAIL)
         page.captcha_input.send_keys(result_captcha)
         page.button_continue_form_1.click()
         page.wait_page_loaded()
@@ -32,8 +32,9 @@ def load_forms_to_recovery_pass(web_browser_class, url="https://lk.rt.ru/"):
     assert page.radio_btn_phone.is_presented()
     assert page.radio_btn_email.is_presented()
 
-    page.radio_btn_phone.click()
+    page.radio_btn_email.click()
     page.button_continue_form_2.click()
+    page.wait_page_loaded()
     count = 1
     while True:  # вернуться к вводу кода, если ввод некорректный
         page.message_for_test_in_page("Ищем подходящий код на почте", count)

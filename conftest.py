@@ -8,10 +8,8 @@ import pytest
 import allure
 import uuid
 
-import selenium
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
 
 
 @pytest.hookimpl(hookwrapper=True, tryfirst=True)
@@ -64,7 +62,7 @@ def web_browser(request):
 @pytest.fixture(scope="class")
 def web_browser_class():
     options = Options()
-    options.headless = True
+    options.headless = False
     options.add_argument('--ignore-certificate-errors')
     browser = webdriver.Chrome(options=options)
     browser.set_window_size(1400, 1000)
