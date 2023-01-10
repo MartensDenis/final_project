@@ -1,11 +1,7 @@
-Introduction
+Введение
 ------------
 
-This repository contains basic example of usage PageObject
-pattern with Selenium and Python (PyTest + Selenium).
-
-Video screencast with the description ot this code:
-https://www.youtube.com/watch?v=BRxp1Kn1G7w
+Итоговая работа: тестирование сайта Ростелеком. Включает в себя [тестовую документацию](https://docs.google.com/spreadsheets/d/1ozhYKREWZtFxSL6fGxtmr54SYOnzvWw7kLGjS6JgYv8/edit?usp=sharing)
 
 
 Files
