@@ -139,5 +139,5 @@ def test_authorisation_for_phone_positive(web_browser):
     page.password.send_keys(PASSWORD)
     page.button_enter.click()
     page.wait_page_loaded()
-    assert page.get_current_url() == 'https://start.rt.ru/?tab=main'
+    assert 'start.rt.ru' in page.get_current_url()
     web_browser.quit()

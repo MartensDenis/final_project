@@ -19,7 +19,7 @@ def test_auth_temp_check_webelements(web_browser):
 
 
 @pytest.mark.parametrize('address', [EMAIL, PHONE])
-def test_authorisation_for_phone_positive(web_browser, address):
+def test_temp_authorisation_positive(web_browser, address):
     page = AuthPageTemp(web_browser, url='https://my.rt.ru/')
     page.wait_page_loaded()
     page.input_address.send_keys(address)

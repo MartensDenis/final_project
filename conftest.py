@@ -26,7 +26,7 @@ def pytest_runtest_makereport(item, call):
 @pytest.fixture
 def web_browser(request):
     options = Options()
-    options.headless = True
+    options.headless = False
     options.add_argument('--ignore-certificate-errors')
     browser = webdriver.Chrome(options=options)
     browser.set_window_size(1400, 1000)
